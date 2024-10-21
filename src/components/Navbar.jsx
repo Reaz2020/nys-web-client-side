@@ -6,7 +6,7 @@ const Navbar = () => {
 
     <section>
 
-      <div className='container mx-auto'>
+      {/* <div className='container mx-auto'>
 
       <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -61,16 +61,25 @@ const Navbar = () => {
   </div>
 </div>
 
-      </div>
+      </div> */}
 
 
-          <nav className="navbar shadow-md p-4 bg-purple-200">
-      <div className="flex gap-11">
+          <nav className="navbar shadow-md p-4  flex justify-between ">
     
-      <Link to="/" className="text-lg border-2 p-2 rounded-xl hover:bg-white bg-lime-500">Home </Link>
-      <Link to="/About" className="text-lg border-2 p-2 rounded-xl hover:bg-white bg-purple-200 bg-lime-500">About-us</Link>
- 
-      </div>
+         <div className='text-center flex gap-4'> 
+           <Link to="/" className="text-lg border-2 p-2 rounded-xl hover:bg-lime-200 bg-white border-lime-500">Home </Link>
+           <Link to="/About" className="text-lg border-2 p-2 rounded-xl  hover:bg-lime-200 bg-white border-lime-500">About-us</Link>
+           <Link to="/About" className="text-lg border-2 p-2 rounded-xl  hover:bg-lime-200 bg-white border-lime-500">Contact-us</Link>
+           <Link to="/About" className="text-lg border-2 p-2 rounded-xl  hover:bg-lime-200 bg-white border-lime-500">Stores</Link>
+         </div>
+         <div className='flex gap-2'>
+          <input type="text" placeholder='search'  className='rounded-xl w-80 h-8 p-2  border-2 border-lime-500 '/>
+
+            <div className='border-2'> 
+               icon
+            </div>
+         </div>
+
     </nav>
 
 
