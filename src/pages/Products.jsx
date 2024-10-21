@@ -43,7 +43,12 @@ const Products = () => {
  
  <div>
      <div className="category  bg-slate-400 flex justify-between items-center">
-        <Category></Category> <Category></Category> <Category></Category> <Category></Category> <Category></Category>
+  
+        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
+        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
+        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
+        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
+        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
      </div>
  </div>
   <div className="flex mt-10">
