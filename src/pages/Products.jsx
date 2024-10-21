@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Product from "../components/Product";
+import Category from "../components/Category";
 
 
 const Products = () => {
@@ -36,32 +37,41 @@ const Products = () => {
       
 
 
-
-
-
     return ( 
 
-        <div>
-            <h1  className="text-center">All products from products</h1>
+ <>
+ 
+ <div>
+     <div className="category  bg-slate-400 flex justify-between items-center">
+        <Category></Category> <Category></Category> <Category></Category> <Category></Category> <Category></Category>
+     </div>
+ </div>
+  <div className="flex mt-10">
+      <section className="sideBar w-1/5 border-2 p-4 m-2">
+         <div className="  bg-white min-h-full border-2">
+
+            <h5>this div is inside the sidebar and for filtering products</h5>
+
+         </div>
+      </section>
+      <section className="productSection w-4/5">
+      <h1  className="text-center">All products from products</h1>
             <div className="grid grid-cols-4">
-      {/* Render the products or a loading message */}
-      {products.length > 0 ? (
-        products.map((product) => (
+                 {/* Render the products or a loading message */}
+                  {products.length > 0 ? (
+                  products.map((product) => (
 
-          <div className=""> 
-            <Product product={product}></Product>
-          </div>
-
-       
-
-
-
-        ))
-      ) : (
-        <p>Loading products...</p>
-      )}
-    </div>
-        </div>
+                    <div className=""> 
+                      <Product product={product}></Product>
+                   </div>
+                  ))
+                ) : (
+              <p>Loading products...</p>
+                 )}
+            </div>
+      </section>
+  </div>
+ </>
      );
 }
  
