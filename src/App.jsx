@@ -7,8 +7,19 @@ import Footer from './components/Footer';
 
 
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [addClickedProducts,setAddClickedProducts] = useState([]);
+
+
+
+
+  function handleAddClickProduct(id){
+    setAddClickedProducts((prevClickedProducts) => [...prevClickedProducts, id]);
+    alert('added  products : '+addClickedProducts)
+
+   }
 
 
   return (
@@ -18,9 +29,10 @@ function App() {
       <div >
       <Router>
         <Navbar />  {/* Navbar Component */}
+       
  
         <Routes>
-          <Route path="/" element={<Home />} />  {/* Home Page Route */}
+          <Route path="/" element={<Home handleAddClickProduct={handleAddClickProduct} />} />  {/* Home Page Route */}
           <Route path="/About" element={<About />} /> 
          
         </Routes>

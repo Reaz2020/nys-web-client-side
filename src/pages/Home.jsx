@@ -1,6 +1,6 @@
 
 import Products from "./Products";
-const Home = () => {
+const Home = ({handleAddClickProduct}) => {
 
 
     return ( 
@@ -10,7 +10,7 @@ const Home = () => {
 
         
         
-             <Products></Products>
+             <Products handleAddClickProduct={handleAddClickProduct}></Products>
          </div>
           
          

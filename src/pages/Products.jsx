@@ -3,8 +3,9 @@ import Product from "../components/Product";
 import Category from "../components/Category";
 
 
-const Products = () => {
+const Products = ({handleAddClickProduct}) => {
     const [products,setProducts] = useState([]);
+   
 
 
     useEffect(() => {
@@ -35,7 +36,13 @@ const Products = () => {
      getProducts();
       },[]);
       
+//    function handleAddClickProduct(id){
+//     setAddClickedProducts((prevClickedProducts) => [...prevClickedProducts, id]);
+//     alert('added  products : '+addClickedProducts)
 
+//    }
+
+  
 
     return ( 
 
@@ -44,11 +51,12 @@ const Products = () => {
  <div>
      <div className="category  bg-slate-400 flex justify-between items-center">
   
-        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
-        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
-        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
-        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
-        <button className="rounded bg-red-500" onClick={alert}> <Category></Category></button>
+       
+        <button className="rounded  btn bg-lime-300" > <Category></Category></button>
+        <button className="rounded  btn bg-lime-300" onClick={alert}> <Category handleAddClickProduct></Category></button>
+        <button className="rounded  btn bg-lime-300" onClick={alert}> <Category handleAddClickProduct></Category></button>
+
+    
      </div>
  </div>
   <div className="flex mt-10">
@@ -67,7 +75,7 @@ const Products = () => {
                   products.map((product) => (
 
                     <div className=""> 
-                      <Product product={product}></Product>
+                      <Product key={product.id} product={product} handleAddClickProduct={handleAddClickProduct}></Product>
                    </div>
                   ))
                 ) : (

@@ -1,4 +1,4 @@
-const Product = ({product}) => {
+const Product = ({product,handleAddClickProduct}) => {
     return ( 
 
 
@@ -7,6 +7,7 @@ const Product = ({product}) => {
             <h2 key={product.id}>title: {product.title}</h2>
             <img className="w-48" src={product.image} alt="" />
             <p>price: {product.price}</p>
+            <button className="btn" onClick={()=>handleAddClickProduct(product.id)}>Add to bucket</button>
            
             </div>
         </>
