@@ -16,7 +16,8 @@ const Navbar = () => {
                 <div className='flex gap-2'>
                     <input type="text" placeholder='Search' className='rounded-xl w-80 h-8 p-2 border-2 border-lime-500' />
                     <div>
-                        <Link to="/cart" className="flex items-center">
+                        <Link to="" className="flex items-center" onClick={alert}>
+                           <p className='text-red-400'>1</p>
                             <FontAwesomeIcon icon={faCartShopping} className="text-lg" />
                         </Link>
                     </div>

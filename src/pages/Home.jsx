@@ -1,17 +1,20 @@
 
 import Products from "./Products";
-const Home = ({handleAddClickProduct}) => {
+
+const Home = () => {
+    
 
 
     return ( 
         <>
-  
-          <div className="min-h-56  text-center ">
+  <div className="flex">
 
+  <div className="min-h-56  text-center ">
         
-        
-             <Products handleAddClickProduct={handleAddClickProduct}></Products>
-         </div>
+        <Products></Products>
+    </div>
+   
+  </div>
           
          
      

@@ -1,8 +1,12 @@
 const Cart = () => {
     return ( 
-        <div>
-            Cart data {}
-        </div>
+        <>
+         <div className="min-w-60 bg-slate-400 min-h-96">   Cart data
+
+         <h4>will be opened onclik on the cart </h4>
+         </div>
+       
+        </>
      );
 }
  

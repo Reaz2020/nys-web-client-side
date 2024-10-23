@@ -7,7 +7,7 @@ const Product = ({product,handleAddClickProduct}) => {
             <h2 key={product.id}>title: {product.title}</h2>
             <img className="w-48" src={product.image} alt="" />
             <p>price: {product.price}</p>
-            <button className="btn" onClick={()=>handleAddClickProduct(product.id)}>Add to bucket</button>
+            <button onClick={()=>handleAddClickProduct(product.id)}>add</button>
            
             </div>
         </>

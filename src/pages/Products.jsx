@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import Product from "../components/Product";
 import Category from "../components/Category";
+import Cart from "../components/Cart";
+import { addToCart } from "../javaScript/functions";
+
 
 
 const Products = ({handleAddClickProduct}) => {
     const [products,setProducts] = useState([]);
+    const [addClickedProducts,setAddClickedProducts] = useState([]);
    
 
 
@@ -36,12 +40,47 @@ const Products = ({handleAddClickProduct}) => {
      getProducts();
       },[]);
       
-//    function handleAddClickProduct(id){
-//     setAddClickedProducts((prevClickedProducts) => [...prevClickedProducts, id]);
-//     alert('added  products : '+addClickedProducts)
+     
 
-//    }
 
+
+
+    function handleAddClickProduct(id){
+       //this function is implemented underneath to fetch a single product , 
+        getProduct(id)
+      //single product prices are set in the state above and will be saved in the cart in local storage 
+     
+     
+    
+    }
+    
+       const getProduct=async(id)=>{
+
+        try {
+            // Fetching products from the API
+            const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+    
+            // Checking if the response is okay (status 200-299)
+            if (!response.ok) {
+              throw new Error(`Error: ${response.status}`);
+            }
+    
+            // Parsing the JSON response
+            const product = await response.json();
+            //here i am saving them in th estate but i should first save in the local storage and bring
+            setAddClickedProducts((prevClickedProducts) => [...prevClickedProducts, product.price]);
+            addToCart(product.price);
+            //alert('added  products : '+addClickedProducts)
+    
+            // Logging the products to the console
+            console.log(products);
+          } catch (error) {
+            // Handling and logging any errors
+            console.error('Failed to fetch products:', error);
+          }
+
+
+     }
   
 
     return ( 
@@ -82,6 +121,9 @@ const Products = ({handleAddClickProduct}) => {
               <p>Loading products...</p>
                  )}
             </div>
+      </section>
+      <section>
+      <Cart></Cart>
       </section>
   </div>
  </>

@@ -10,16 +10,7 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [addClickedProducts,setAddClickedProducts] = useState([]);
 
-
-
-
-  function handleAddClickProduct(id){
-    setAddClickedProducts((prevClickedProducts) => [...prevClickedProducts, id]);
-    alert('added  products : '+addClickedProducts)
-
-   }
 
 
   return (
@@ -32,7 +23,7 @@ function App() {
        
  
         <Routes>
-          <Route path="/" element={<Home handleAddClickProduct={handleAddClickProduct} />} />  {/* Home Page Route */}
+          <Route path="/" element={<Home/>} />  {/* Home Page Route */}
           <Route path="/About" element={<About />} /> 
          
         </Routes>
