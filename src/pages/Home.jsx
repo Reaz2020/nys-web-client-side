@@ -1,7 +1,7 @@
 
 import Products from "./Products";
 
-const Home = () => {
+const Home = ({isActive}) => {
     
 
 
@@ -11,7 +11,7 @@ const Home = () => {
 
   <div className="min-h-56  text-center ">
         
-        <Products></Products>
+        <Products isActive={isActive}></Products>
     </div>
    
   </div>

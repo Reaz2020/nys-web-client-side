@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = () => {
+const Navbar = ({handleCart}) => {
     return (
         <section>
             <nav className="navbar shadow-md p-4 flex justify-between">
@@ -16,7 +16,7 @@ const Navbar = () => {
                 <div className='flex gap-2'>
                     <input type="text" placeholder='Search' className='rounded-xl w-80 h-8 p-2 border-2 border-lime-500' />
                     <div>
-                        <Link to="" className="flex items-center" onClick={alert}>
+                        <Link to="" className="flex items-center" onClick={handleCart}>
                            <p className='text-red-400'>1</p>
                             <FontAwesomeIcon icon={faCartShopping} className="text-lg" />
                         </Link>

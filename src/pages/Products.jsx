@@ -6,9 +6,13 @@ import { addToCart } from "../javaScript/functions";
 
 
 
-const Products = ({handleAddClickProduct}) => {
+const Products = ({handleAddClickProduct,isActive}) => {
     const [products,setProducts] = useState([]);
     const [addClickedProducts,setAddClickedProducts] = useState([]);
+    // const [isActive,setIsActive]=useState({
+    //     cart:true,
+    //     status:'cart'
+    // })
    
 
 
@@ -29,7 +33,7 @@ const Products = ({handleAddClickProduct}) => {
             setProducts(productsData);
     
             // Logging the products to the console
-            console.log(products);
+           // console.log(products);
           } catch (error) {
             // Handling and logging any errors
             console.error('Failed to fetch products:', error);
@@ -41,17 +45,11 @@ const Products = ({handleAddClickProduct}) => {
       },[]);
       
      
-
-
-
-
     function handleAddClickProduct(id){
        //this function is implemented underneath to fetch a single product , 
         getProduct(id)
       //single product prices are set in the state above and will be saved in the cart in local storage 
      
-     
-    
     }
     
        const getProduct=async(id)=>{
@@ -82,6 +80,11 @@ const Products = ({handleAddClickProduct}) => {
 
      }
   
+// //cart status 
+// const handleCart = (status) => {
+//   !isActive.cart
+// }
+
 
     return ( 
 
@@ -90,7 +93,6 @@ const Products = ({handleAddClickProduct}) => {
  <div>
      <div className="category  bg-slate-400 flex justify-between items-center">
   
-       
         <button className="rounded  btn bg-lime-300" > <Category></Category></button>
         <button className="rounded  btn bg-lime-300" onClick={alert}> <Category handleAddClickProduct></Category></button>
         <button className="rounded  btn bg-lime-300" onClick={alert}> <Category handleAddClickProduct></Category></button>
@@ -122,9 +124,12 @@ const Products = ({handleAddClickProduct}) => {
                  )}
             </div>
       </section>
-      <section>
-      <Cart></Cart>
-      </section>
+      
+
+    {/* cart section */}
+   { isActive.cart? <Cart></Cart>:''}
+
+
   </div>
  </>
      );

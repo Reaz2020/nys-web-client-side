@@ -11,7 +11,17 @@ import { useState } from 'react';
 
 function App() {
 
+  const [isActive,setIsActive]=useState({
+    cart:true,
+    // status:'cart'
+})
 
+const handleCart = () => {
+  setIsActive(prevState => ({
+      ...prevState, // Spread the previous state
+      cart: !prevState.cart // Toggle the cart property
+  }));
+};
 
   return (
     <>
@@ -19,11 +29,11 @@ function App() {
 
       <div >
       <Router>
-        <Navbar />  {/* Navbar Component */}
+        <Navbar handleCart={handleCart} />  {/* Navbar Component */}
        
  
-        <Routes>
-          <Route path="/" element={<Home/>} />  {/* Home Page Route */}
+        <Routes >
+          <Route path="/" element={<Home isActive={isActive}/>} />  {/* Home Page Route */}
           <Route path="/About" element={<About />} /> 
          
         </Routes>
