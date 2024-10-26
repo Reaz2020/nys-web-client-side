@@ -6,7 +6,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
     return (
         <section>
-            <div className='container mx-auto flex flex-row justify-around items-center mt-3 mb-3'>
+            <div className='container mx-auto flex flex-col md:flex-row justify-around gap-6 md:gap-0 items-center mt-3 mb-3'>
                 <div>
                     <h1 className='text-3xl text-blue-700 arima font-bold '>Item <span className='text-4xl text-yellow-400'>B</span>azaar</h1>
                     <p>Explore <span className='text-blue-400'>&</span> Buy</p>

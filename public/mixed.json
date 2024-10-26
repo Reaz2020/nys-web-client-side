@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "img": "assets/mixed/fashion-1-removebg-preview.png",
+        "name": "Summer on Blue!!",
+        "discription": "Stylish and comfortable, this versatile fashion piece effortlessly combines elegance and modern flair, perfect for any occasion or season."
+    },
+    {
+        "id": 2,
+        "img": "/assets/mixed/fashion-3-removebg-preview (1).png",
+        "name": "Party Saree",
+        "discription": "Chic and contemporary, this fashion staple blends comfort with elegance, ideal for creating a sophisticated look any day of the week."
+    },
+    {
+        "id": 3,
+        "img": "/assets/mixed/fashion-3-removebg-preview.png",
+        "name": "Traditional Saree",
+        "discription": "Effortlessly trendy, this wardrobe essential brings modern style and comfort together, adding a touch of class to any outfit."
+    },
+    {
+        "id": 4,
+        "img": "/assets/mixed/fashion-4-removebg-preview.png",
+        "name": "Men Black Panjabi",
+        "discription": "Refined yet casual, this fashion piece enhances any look with its timeless appeal, perfect for both relaxed and formal settings."
+    }
+]

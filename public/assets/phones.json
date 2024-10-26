@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "img": "/assets/phones/iphone-16.png",
+        "name": "iPhone 16",
+        "color": "Midnight Gold"
+    },
+    {
+        "id": 2,
+        "img": "/assets/phones/iphone-16-2.png",
+        "name": "iPhone 16",
+        "color": "Ocean Blue"
+    },
+    {
+        "id": 3,
+        "img": "/assets/phones/samsung.png",
+        "name": "Samsung S24 Ultra",
+        "color": "Silver Gold"
+    },
+    {
+        "id": 4,
+        "img": "/assets/phones/Realme.png",
+        "name": "Realme 12 Pro Plus",
+        "color": "Party Orange"
+    }
+]
