@@ -33,6 +33,7 @@ function App() {
             <Route path="/" element={<Home isActive={isActive} />} />{" "}
             {/* Home Page Route */}
             <Route path="/About" element={<About />} />
+       
           </Routes>
           <Footer></Footer>
         </Router>

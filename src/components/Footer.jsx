@@ -1,4 +1,4 @@
-const Fotter = () => {
+const Footer = () => {
   return (
     <section className="bg-[#0b051d] mt-12 mb-12">
       <div className="container w-full border-2 border-red-600">
@@ -22,4 +22,4 @@ const Fotter = () => {
   );
 };
 
-export default Fotter;
+export default Footer;
