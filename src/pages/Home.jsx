@@ -9,7 +9,7 @@ const Home = ({isActive}) => {
         <>
   <div className="flex">
 
-  <div className="min-h-56  text-center ">
+  <div className=" text-center ">
         
         <Products isActive={isActive}></Products>
     </div>

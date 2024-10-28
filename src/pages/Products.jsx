@@ -78,12 +78,12 @@ const Products = ({ handleAddClickProduct }) => {
 
   return (
     <section className="w-full">
-      <div className="container mx-auto flex flex-col justify-center items-center border-2">
+      <div className=" flex flex-col justify-center items-center border-2 mx-4">
         <div className="flex flex-row items-center w-full">
           <h1 className="flex-1 text-3xl font-bold">Popular Products</h1>
           <p className="btn">Eplore More</p>
         </div>
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-5">
           {/* Render the products or a loading message */}
           {products.length > 0 ? (
             products.map((product) => (
