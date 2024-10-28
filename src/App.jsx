@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import './App.css';
 import { useState } from 'react';
 import Hero from './components/Hero';
+import Product_selection from './components/Product_selection';
 
 function App() {
 
@@ -32,6 +33,7 @@ const handleCart = () => {
       <Router>
         <Navbar handleCart={handleCart} />  {/* Navbar Component */}
         <Hero/>
+        <Product_selection></Product_selection>
        
  
         <Routes >
