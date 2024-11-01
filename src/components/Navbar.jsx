@@ -1,46 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import Hero from './Hero';
 
 const Navbar = () => {
+    const [openShopingCart ,setOpenShopingCart ]=useState(false);
+    function handleOpenShopingCart (){
+        setOpenShopingCart (!openShopingCart )
+    }
+    console.log(openShopingCart );
+
     return (
-        <section>
-            <div className='container mx-auto flex flex-col md:flex-row justify-around gap-6 md:gap-0 items-center mt-3 mb-3'>
-                <div>
-                    <h1 className='text-3xl text-blue-700 arima font-bold '>Item <span className='text-4xl text-yellow-400'>B</span>azaar</h1>
-                    <p>Explore <span className='text-blue-400'>&</span> Buy</p>
-                </div>
-                {/* adding the search part */}
-                <div className='w-[50%]'>
-                    <label class="input input-bordered flex items-center gap-2 border-blue-400">
-                        <input type="text" className="flex-1 roboto " placeholder="Search for Products, Brands and More" />
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 16 16"
-                            fill="currentColor"
-                            class="h-4 w-4 opacity-70 text-blue-500">
-                            <path
-                                fill-rule="evenodd"
-                                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </label>
-                </div>
-                {/* adding the favourite button, login, cart button */}
-                <div className='flex flex-row gap-5 items-center '>
-                    <p className='flex flex-row gap-4 items-center btn border-2 border-blue-400 bg-yellow-200 '><i class="fa-solid fa-heart"></i>Whitelist</p>
-                    <div class="indicator">
-                        <span class="indicator-item badge badge-neutral text-[10px] text-blue-400 bg-transparent border-none font-bold text-xl">99+</span>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    <p className='flex flex-row items-center gap-4 cursor-pointer font-bold btn  border-2 border-blue-400 bg-yellow-200 '><i class="fa-solid fa-user "></i>Login</p>
-                </div>
-            </div>
-            
+    <div className=' '>
+
+<section >
+           
+
+<nav className="navbar shadow-md p-4 flex justify-between ">
+<div className='text-center flex gap-4'>
+   <Link to="/" className="text-lg border-2 p-2 rounded-xl hover:bg-lime-200 bg-white border-lime-500">Home</Link>
+   <Link to="/about" className="text-lg border-2 p-2 rounded-xl hover:bg-lime-200 bg-white border-lime-500">About Us</Link>
+   <Link to="/contact" className="text-lg border-2 p-2 rounded-xl hover:bg-lime-200 bg-white border-lime-500">Contact Us</Link>
+   <Link to="/products" className="text-lg border-2 p-2 rounded-xl hover:bg-lime-200 bg-white border-lime-500">Products</Link>
+   <Link to="/login" className="text-lg border-2 p-2 rounded-xl hover:bg-lime-200 bg-white border-lime-500">Login/Register</Link>
+   
+   
+</div>
+<div className='flex gap-2'>
+   <input type="text" placeholder='Search' className='rounded-xl w-80 h-8 p-2 border-2 border-lime-500' />
+   <div>
+       <Link to="" className="flex items-center" onClick={handleOpenShopingCart }>
+           <p className='text-red-400'>1</p>
+           <FontAwesomeIcon icon={faCartShopping} className="text-lg" />
+       </Link>
+   </div>
+</div>
+</nav>
+     
+       </section>
+        {/* <Hero></Hero> */}
+ 
+      <section className='flex  top-30 border-2 '>
+
+   <div className={`border-4 p-2 absolute right-0 opacity-90 flex justify-between ${!openShopingCart ? '-top-96' : 'top-16'} shadow-lg rounded-lg border-blue-700 bg-grey-300 min-h-96 w-[21rem] duration-1000`}>
+       {/* Your content here */}
+       <div className='bold text-red-600'>Products 
+       
 
 
-        </section>
+
+       </div>
+       <div className='bold text-red-600'> Prices 
+
+       </div>
+       <hr />
+   </div>
+
+       </section>
+    </div> 
+        
     );
 };
 
@@ -63,3 +82,6 @@ export default Navbar;
         </div>
     </div>
 </nav> */}
+
+
+

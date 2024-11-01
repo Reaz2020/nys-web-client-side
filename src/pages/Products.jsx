@@ -3,6 +3,7 @@ import Product from "../components/Product";
 
 import Cart from "../components/Cart";
 import { addToCart } from "../javaScript/functions";
+import { useLoaderData } from "react-router-dom";
 
 const Products = ({ handleAddClickProduct }) => {
   const [products, setProducts] = useState([]);
@@ -12,64 +13,75 @@ const Products = ({ handleAddClickProduct }) => {
   //     status:'cart'
   // })
 
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        // Fetching products from the API
-        const response = await fetch("https://fakestoreapi.com/products");
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     try {
+  //       // Fetching products from the API
+  //       const response = await fetch("https://fakestoreapi.com/products");
 
-        // Checking if the response is okay (status 200-299)
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status}`);
-        }
+  //       // Checking if the response is okay (status 200-299)
+  //       if (!response.ok) {
+  //         throw new Error(`Error: ${response.status}`);
+  //       }
 
-        // Parsing the JSON response
-        const productsData = await response.json();
-        setProducts(productsData);
+  //       // Parsing the JSON response
+  //       const productsData = await response.json();
+  //       setProducts(productsData);
 
-        // Logging the products to the console
-        // console.log(products);
-      } catch (error) {
-        // Handling and logging any errors
-        console.error("Failed to fetch products:", error);
-      }
-    };
-    getProducts();
-  }, []);
+  //       // Logging the products to the console
+  //       // console.log(products);
+  //     } catch (error) {
+  //       // Handling and logging any errors
+  //       console.error("Failed to fetch products:", error);
+  //     }
+  //   };
+  //   getProducts();
+  // }, []);
 
-  function handleAddClickProduct(id) {
-    //this function is implemented underneath to fetch a single product ,
-    getProduct(id);
-    //single product prices are set in the state above and will be saved in the cart in local storage
-  }
 
-  const getProduct = async (id) => {
-    try {
-      // Fetching products from the API
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     
+  //   };
+  //   getProducts();
+  // }, []);
 
-      // Checking if the response is okay (status 200-299)
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
 
-      // Parsing the JSON response
-      const product = await response.json();
-      //here i am saving them in th estate but i should first save in the local storage and bring
-      setAddClickedProducts((prevClickedProducts) => [
-        ...prevClickedProducts,
-        product.price,
-      ]);
-      addToCart(product.price);
-      //alert('added  products : '+addClickedProducts)
+  const productsData=useLoaderData();
 
-      // Logging the products to the console
-      console.log(products);
-    } catch (error) {
-      // Handling and logging any errors
-      console.error("Failed to fetch products:", error);
-    }
-  };
+  // function handleAddClickProduct(id) {
+  //   //this function is implemented underneath to fetch a single product ,
+  //   getProduct(id);
+  //   //single product prices are set in the state above and will be saved in the cart in local storage
+  // }
+
+  // const getProduct = async (id) => {
+  //   try {
+  //     // Fetching products from the API
+  //     const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+
+  //     // Checking if the response is okay (status 200-299)
+  //     if (!response.ok) {
+  //       throw new Error(`Error: ${response.status}`);
+  //     }
+
+  //     // Parsing the JSON response
+  //     const product = await response.json();
+  //     //here i am saving them in th estate but i should first save in the local storage and bring
+  //     setAddClickedProducts((prevClickedProducts) => [
+  //       ...prevClickedProducts,
+  //       product.price,
+  //     ]);
+  //     addToCart(product.price);
+  //     //alert('added  products : '+addClickedProducts)
+
+  //     // Logging the products to the console
+  //     console.log(products);
+  //   } catch (error) {
+  //     // Handling and logging any errors
+  //     console.error("Failed to fetch products:", error);
+  //   }
+  // };
 
   // //cart status
   // const handleCart = (status) => {
@@ -83,10 +95,14 @@ const Products = ({ handleAddClickProduct }) => {
           <h1 className="flex-1 text-3xl font-bold">Popular Products</h1>
           <p className="btn">Eplore More</p>
         </div>
+
         <div className="grid grid-cols-5">
+
           {/* Render the products or a loading message */}
-          {products.length > 0 ? (
-            products.map((product) => (
+          {productsData.length > 0 ? 
+          
+          (
+            productsData.map((product) => (
               <div className="">
                 <Product
                   key={product.id}
@@ -95,9 +111,14 @@ const Products = ({ handleAddClickProduct }) => {
                 ></Product>
               </div>
             ))
-          ) : (
+          ) 
+          : 
+          
+          (
             <p>Loading products...</p>
           )}
+
+
         </div>
       </div>
     </section>

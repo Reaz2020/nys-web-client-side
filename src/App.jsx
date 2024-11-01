@@ -9,33 +9,46 @@ import { useState } from "react";
 import Hero from "./components/Hero";
 import Product_selection from "./components/Product_selection";
 
+
 function App() {
   const [isActive, setIsActive] = useState({
     cart: true,
     // status:'cart'
   });
 
-  const handleCart = () => {
-    setIsActive((prevState) => ({
-      ...prevState, // Spread the previous state
-      cart: !prevState.cart, // Toggle the cart property
-    }));
-  };
+  // const handleCart = () => {
+  //   setIsActive((prevState) => ({
+  //     ...prevState, // Spread the previous state
+  //     cart: !prevState.cart, // Toggle the cart property
+  //   }));
+  // };
+// const router = createBrowserRouter([
+  
+  
+// // {
+// //   path:'/', element:'hello'
+// // }
+
+
+// ])
+
 
   return (
     <>
       <div>
         <Router>
-          <Navbar handleCart={handleCart} /> {/* Navbar Component */}
-          <Hero />
-          <Product_selection></Product_selection>
+          {/* <Navbar handleCart={handleCart} /> Navbar Component */}
+          {/* <Hero /> */}
+          {/* <Product_selection></Product_selection> */}
           <Routes>
-            <Route path="/" element={<Home isActive={isActive} />} />{" "}
+            {/* <Route path="/" element={<Home isActive={isActive} />} />{" "} */}
             {/* Home Page Route */}
-            <Route path="/About" element={<About />} />
+            {/* <Route path="/About" element={<About />} /> */}
+
+
        
           </Routes>
-          <Footer></Footer>
+          {/* <Footer></Footer> */}
         </Router>
       </div>
     </>

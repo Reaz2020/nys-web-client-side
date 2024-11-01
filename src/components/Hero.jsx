@@ -38,7 +38,7 @@ const Hero = () => {
 
   return (
     <section className=" bg-[#f3f3f5]">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 ">
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 mb-12 gap-6 mt-12">
           <div className="md:col-span-2 flex flex-col md:flex-row justify-center items-center border-2 w-full h-fit rounded-[42px] px-4 py-4 border-yellow-200 bg-white transition-transform duration-200 hover:scale-95 ">
             {phones.length > 0 && (
